@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core'
 import { Routes } from '@angular/router';
 import { CacheService } from './common/services/cache.service';
 import { ECacheType } from './common/type-cache.enum';
+import { ETypeLogin } from './common/type-login.enum';
 
 export class GlobalService {
 
@@ -168,12 +169,15 @@ export class GlobalSettings {
 }
 export class AuthSettings {
 
-  public TYPE_LOGIN: string;
+  public TYPE_LOGIN: ETypeLogin;
   public CLIENT_ID: string;
   public CLIENT_ID_RO: string;
   public CLIENT_ID_CC: string;
+  public CLIENT_SECRET_CC: string;
   public SCOPE: string;
   public CACHE_TYPE: ECacheType;
+  public NAME_TOKEN: string;
+  public NAME_TOKEN_ANONYMOUS: string;
 
   setSSO(sso: any) {
     if (sso) {
@@ -182,12 +186,17 @@ export class AuthSettings {
   }
 
   constructor() {
-    this.TYPE_LOGIN = "SSO";
+    this.TYPE_LOGIN = ETypeLogin.SSO;
     this.CLIENT_ID = 'Seed-spa-custom';
     this.CLIENT_ID_RO = 'Seed-spa-custom';
     this.CLIENT_ID_CC = 'Seed-spa-custom';
+    this.CLIENT_ID_CC = "Seed-spa-anonymous";
+    this.CLIENT_SECRET_CC = "4aa288ca-1603-45c2-85c3-b41a08d2bd0a";
     this.SCOPE = "openid ssosa profile email";
     this.CACHE_TYPE = ECacheType.LOCAL;
+    this.NAME_TOKEN = "TOKEN_AUTH";
+    this.NAME_TOKEN_ANONYMOUS = "TOKEN_AUTH_ANONYMOUS"
+
   }
 
   init(sso: any) {
