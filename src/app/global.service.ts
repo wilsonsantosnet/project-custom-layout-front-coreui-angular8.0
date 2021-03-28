@@ -189,7 +189,6 @@ export class AuthSettings {
     this.TYPE_LOGIN = ETypeLogin.Anonymous;
     this.CLIENT_ID = 'Seed-spa-custom';
     this.CLIENT_ID_RO = 'Seed-spa-custom';
-    this.CLIENT_ID_CC = 'Seed-spa-custom';
     this.CLIENT_ID_CC = "Seed-spa-anonymous";
     this.CLIENT_SECRET_CC = "4aa288ca-1603-45c2-85c3-b41a08d2bd0a";
     this.SCOPE = "openid ssosa profile email";
